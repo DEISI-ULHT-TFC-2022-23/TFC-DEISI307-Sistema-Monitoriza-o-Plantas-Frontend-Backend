@@ -21,7 +21,6 @@ body {
     flex-direction: column;
     background: white;
     color: var(--textColor);
-    overflow: hidden;
 }
   
 .nav {
