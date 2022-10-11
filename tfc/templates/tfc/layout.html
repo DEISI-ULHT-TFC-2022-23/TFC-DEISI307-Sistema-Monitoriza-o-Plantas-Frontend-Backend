@@ -11,25 +11,33 @@
         <link rel="shortcut icon" type="image/x-icon" href="{% static 'portfolio/images/papel.ico' %}">-->
         {% load static %}
         <link rel="stylesheet" href="{% static 'tfc/css/layout.css' %}">
-        <title>Monitorização de Plantas</title>
+        <title>Sistema de Monitorização de Plantas</title>
     </head> 
     <body>
-        <header>
-            <div>
-                Pedro Rocha 🎓
+        <nav class="nav">
+            <div id="menuToggle">
+                <input type="checkbox">
+                <span></span>
+                <span></span>
+                <span></span>
+              
+                <ul id="menu">
+                    <a href="{% url 'tfc:home' %}"><li>Home</li></a>
+                    <a href="{% url 'tfc:about' %}"><li>About</li></a>
+                </ul>
             </div>
-            <nav>
-              <a href="{% url 'tfc:home' %}">Home🏡</a>
-            </nav>
-        </header>
+        </nav>
           
-        <main>
+        <main id="main">
             {% block main %}
             {% endblock main %}
         </main>
 
         <footer>
-            ULHT, 2022
+            <p>ULHT, 2022</p>
+        </footer>
+        <footer>
+            <p>Copyright, 2022</p>
         </footer>
     </body>
 </html>
