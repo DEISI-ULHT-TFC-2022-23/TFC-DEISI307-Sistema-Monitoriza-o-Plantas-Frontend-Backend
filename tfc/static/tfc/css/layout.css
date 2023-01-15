@@ -55,7 +55,7 @@ footer {
     padding: 0 2vw;
     align-items: center;
     background-color: grey;
-    color: rgb(18, 0, 0);
+    color: black;
 }
 
 #menuToggle {
@@ -175,7 +175,7 @@ footer {
 
 #menu li {
     padding: 10px 0;
-    font-size: 15px;
+    font-size: 20px;
 }
 
 #menuToggle input:checked ~ ul {

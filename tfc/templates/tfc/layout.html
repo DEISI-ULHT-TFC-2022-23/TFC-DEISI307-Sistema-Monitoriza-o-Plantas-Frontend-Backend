@@ -1,43 +1,43 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang = "pt">
     <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="author" content="Pedro Rocha">
-        <meta name="keywords" content="Front-end, Back-end">
-        <meta name="description" content="TFC">
-        <!--{% load static %}
-        <link rel="shortcut icon" type="image/x-icon" href="{% static 'portfolio/images/papel.ico' %}">-->
+        <meta charset = "UTF-8">
+        <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+        <meta name = "author" content = "Pedro Rocha">
+        <meta name = "keywords" content = "Front-end, Back-end">
+        <meta name = "description" content = "TFC">
         {% load static %}
-        <link rel="stylesheet" href="{% static 'tfc/css/layout.css' %}">
+        <link rel = "shortcut icon" type = "image/x-icon" href = "{% static 'tfc/images/planta.ico' %}">
+        {% load static %}
+        <link rel = "stylesheet" href = "{% static 'tfc/css/layout.css' %}">
         <title>Sistema de Monitorização de Plantas</title>
-    </head> 
+    </head>
     <body>
-        <nav class="nav">
-            <div id="menuToggle">
-                <input type="checkbox">
+        <nav class = "nav">
+            <div id = "menuToggle">
+                <input type = "checkbox">
                 <span></span>
                 <span></span>
                 <span></span>
               
-                <ul id="menu">
-                    <a href="{% url 'tfc:home' %}"><li>Home</li></a>
-                    <a href="{% url 'tfc:about' %}"><li>About</li></a>
+                <ul id = "menu">
+                    <a href = "{% url 'tfc:home' %}"><li>Home</li></a>
+                    <a href = "{% url 'tfc:about' %}"><li>About</li></a>
                 </ul>
             </div>
         </nav>
           
-        <main id="main">
+        <main id = "main">
             {% block main %}
             {% endblock main %}
         </main>
 
         <footer>
-            <p>ULHT, 2022</p>
+            <p>ULHT, 2023</p>
         </footer>
         <footer>
-            <p>Copyright, 2022</p>
+            <p>Copyright, 2023</p>
         </footer>
     </body>
 </html>
