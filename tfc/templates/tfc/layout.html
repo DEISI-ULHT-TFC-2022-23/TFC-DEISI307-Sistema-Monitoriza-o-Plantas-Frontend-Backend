@@ -2,42 +2,121 @@
 <html lang = "pt">
     <head>
         <meta charset = "UTF-8">
-        <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
-        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+        <meta http-equiv = "X-UA-Compatible" content = "IE = edge">
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
         <meta name = "author" content = "Pedro Rocha">
-        <meta name = "keywords" content = "Front-end, Back-end">
+        <meta name = "keywords" content = "Frontend, Backend">
         <meta name = "description" content = "TFC">
         {% load static %}
         <link rel = "shortcut icon" type = "image/x-icon" href = "{% static 'tfc/images/planta.ico' %}">
         {% load static %}
         <link rel = "stylesheet" href = "{% static 'tfc/css/layout.css' %}">
         <title>Sistema de Monitorização de Plantas</title>
+
+        <script>
+            $(document).ready(function(){       
+                var down = false;
+                
+                $('#bell').click(function(e){
+                  
+                    var color = $(this).text();
+                    if(down){
+                        
+                        $('#box').css('height','0px');
+                        $('#box').css('opacity','0');
+                        down = false;
+                    }else{
+                        
+                        $('#box').css('height','auto');
+                        $('#box').css('opacity','1');
+                        down = true;  
+                    }
+                    
+                });    
+            });
+        </script>
+
     </head>
     <body>
-        <nav class = "nav">
-            <div id = "menuToggle">
-                <input type = "checkbox">
-                <span></span>
-                <span></span>
-                <span></span>
-              
-                <ul id = "menu">
-                    <a href = "{% url 'tfc:home' %}"><li>Home</li></a>
-                    <a href = "{% url 'tfc:about' %}"><li>About</li></a>
-                </ul>
+        <nav id = "mySidenav" class = "sidenav">
+            {% load static %}
+            <center><img src="{% static 'tfc/images/planta.ico' %}" alt="planta icon"></center>
+            <a href = "{% url 'tfc:dashboard' %}">🎯 Dashboard</a>
+            <a href = "{% url 'tfc:inicio' %}">🏠 Início</a>
+            <a href = "{% url 'tfc:plantas' %}">🌱 Plantas</a>
+            <a href = "{% url 'tfc:omeujardim' %}">🌷 Meu Jardim</a>
+            <a href = "{% url 'tfc:definicoes' %}">⚙️ Definições</a>
+            <a href = "{% url 'tfc:login' %}">Logout</a>
+        </nav>
+        
+        <nav class="nav2">
+            <div class="logo"> BBBOOTSTRAP.COM </div>
+            <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+                <div id="myDropdown" class="dropdown-content">
+                    🔍<input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+                  <a href="#about">About</a>
+                  <a href="#base">Base</a>
+                  <a href="#blog">Blog</a>
+                  <a href="#contact">Contact</a>
+                  <a href="#custom">Custom</a>
+                  <a href="#support">Support</a>
+                  <a href="#tools">Tools</a>
+                </div>
+              </div>
+            <div class="icon" id="bell"> <img src="https://i.imgur.com/AC7dgLA.png" alt="bell"> </div>
+            <div class="notifications" id="box">
+                <h2>Notifications - <span>3</span></h2>
+                <div class="notifications-item"> <img src="https://i.imgur.com/uIgDDDd.jpg" alt="img">
+                    <div class="text">
+                        <h4>Regar Planta</h4>
+                        <p>Não se esqueça de regar a planta X</p>
+                    </div>
+                </div>
+                <div class="notifications-item"> <img src="https://img.icons8.com/flat_round/64/000000/vote-badge.png" alt="img">
+                    <div class="text">
+                        <h4>Colocar fertilizante</h4>
+                        <p>Não se esqueça de colocar fertilizante na planta X</p>
+                    </div>
+                </div>
+                <div class="notifications-item"> <img src="https://img.icons8.com/flat_round/64/000000/vote-badge.png" alt="img">
+                    <div class="text">
+                        <h4>Colocar fertilizante</h4>
+                        <p>Não se esqueça de colocar fertilizante na planta Y</p>
+                    </div>
+                </div>
             </div>
         </nav>
-          
+
         <main id = "main">
             {% block main %}
             {% endblock main %}
         </main>
 
-        <footer>
-            <p>ULHT, 2023</p>
-        </footer>
-        <footer>
-            <p>Copyright, 2023</p>
-        </footer>
+        <script>
+            /* When the user clicks on the button,
+            toggle between hiding and showing the dropdown content */
+            function myFunction() {
+              document.getElementById("myDropdown").classList.toggle("show");
+            }
+            
+            function filterFunction() {
+              var input, filter, ul, li, a, i;
+              input = document.getElementById("myInput");
+              filter = input.value.toUpperCase();
+              div = document.getElementById("myDropdown");
+              a = div.getElementsByTagName("a");
+              for (i = 0; i < a.length; i++) {
+                txtValue = a[i].textContent || a[i].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                  a[i].style.display = "";
+                } else {
+                  a[i].style.display = "none";
+                }
+              }
+            }
+            </script>
+
+        <footer>Pedro Rocha © Copyright, 2023</footer>
     </body>
 </html>

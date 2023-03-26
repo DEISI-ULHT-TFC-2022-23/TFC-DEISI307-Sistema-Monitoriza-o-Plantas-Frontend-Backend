@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang = "pt">
+<head>
+    <meta charset = "UTF-8">
+    <meta http-equiv = "X-UA-Compatible" content = "IE = edge">
+    <meta name = "viewport" content = "width=device-width, initial-scale = 1.0">
+    <meta name = "author" content = "Pedro Rocha">
+    <meta name = "keywords" content = "Frontend, Backend">
+    <meta name = "description" content = "TFC">
+    {% load static %}
+    <link rel = "shortcut icon" type = "image/x-icon" href = "{% static 'tfc/images/planta.ico' %}">
+    {% load static %}
+    <link rel = "stylesheet" href = "{% static 'tfc/css/splashcreen.css' %}">
+    <title>Splashcreen</title>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            fetch('https://api.ipma.pt/open-data/forecast/meteorology/cities/daily/{globalIdLocal}.json')
+            .then(response => response.json())
+            .then(data => console.log(data));
+        });
+    </script>
+</head>
+<body>
+    
+    <video autoplay loop muted class="back-video">
+        {% load static %}
+        <source src="{% static 'tfc/videos/video.mp4' %}" type="video/mp4" >
+    </video>
+
+    <a href="{% url 'tfc:login' %}"><input type="button" value="Preparado? Vamos começar"></a>
+    
+</body>
+</html>
