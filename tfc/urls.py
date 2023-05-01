@@ -17,6 +17,7 @@ urlpatterns = [
     path('dashboard', views.dashboard_page_view, name = 'dashboard'),
     path('inicio', views.inicio_page_view, name = 'inicio'),
     path('plantas', views.plantas_page_view, name = 'plantas'),
+    path('pepino', views.pepino_page_view, name = 'pepino'),
     path('omeujardim', views.jardim_page_view, name = 'omeujardim'),
     path('definicoes', views.definicoes_page_view, name = 'definicoes'),
 ]   

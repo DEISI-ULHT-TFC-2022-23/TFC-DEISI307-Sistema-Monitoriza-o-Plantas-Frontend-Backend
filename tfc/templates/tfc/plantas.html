@@ -1,4 +1,58 @@
 {% extends 'tfc/layout.html' %}
 
 {% block main %}
+    <header>Plantas</header>
+    <div class="espacamento"></div>
+    <div class="plantas">
+        <center>
+            <div>
+                <a href="{% url 'tfc:pepino' %}">
+                    <div>
+                        {% load static %}
+                        <img src="{% static 'tfc/images/planta.ico' %}" alt="pepino">
+                    </div>
+                    <div><p>Pepino</p></div>
+                </a>
+            </div>
+        </center>
+        
+        
+        
+        <div>
+            <div><img src="images/lisboa.jpg" alt="lisboa"></div>
+            <div><p>Lisboa</p></div>
+        </div>
+        <div>
+            <div><img src="images/budapeste.jpg" alt="budapeste"></div>
+            <div><p>Budapeste</p></div>
+        </div>
+        <div>
+            <div><img src="images/londres.jpg" alt="londres"></div>
+            <div><p>Londres</p></div>
+        </div>
+        <div>
+            <div><img src="images/milao.jpg" alt="milao"></div>
+            <div><p>Milao</p></div>
+        </div>
+        <div>
+            <div><img src="images/praga.jpg" alt="praga"></div>
+            <div><p>Praga</p></div>
+        </div>
+        <div>
+            <div><img src="images/reykiavik.jpg" alt="reykiavik"></div>
+            <div><p>Reykiavik</p></div>
+        </div>
+        <div>
+            <div><img src="images/roma.jpg" alt="roma"></div>
+            <div><p>Roma</p></div>
+        </div>
+        <div>
+            <div><img src="images/varsovia.jpg" alt="varsovia"></div>
+            <div><p>Varsovia</p></div>
+        </div>
+        <div>
+            <div><img src="images/viena.jpg" alt="viena"></div>
+            <div><p>Viena</p></div>
+        </div>
+    </div>
 {% endblock main %}
