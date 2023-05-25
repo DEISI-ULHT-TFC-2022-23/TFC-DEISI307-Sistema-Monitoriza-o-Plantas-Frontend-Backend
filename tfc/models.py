@@ -3,32 +3,61 @@ from django.db import models
 
 # Create your models here.
 
-class Condicao(models.Model):
-    dificuldade = models.CharField(max_length=16)
-    expo_solar = models.IntegerField(default=0)
-    quantidade_agua = models.IntegerField(default=0)
-    quantidade_fertilizante = models.IntegerField(default=0)
-
-    def __str__(self):
-        return self.dificuldade
-    
-
 class Planta(models.Model):
     nome = models.CharField(max_length = 64)
-    descricao = models.CharField(max_length = 512)
+    descricao = models.TextField(default = "")
     imagem = models.ImageField(default = "")
-    condicoes = models.ManyToManyField(Condicao)
+    dificuldade = models.CharField(max_length = 16, default = "")
+    expo_solar = models.CharField(max_length = 32)
+    quantidade_agua = models.FloatField(default = 0.0)
+    quantidade_fertilizante = models.FloatField(default = 0.0)
+    tipo_fertilizante = models.CharField(max_length = 64, default = "")
 
     def __str__(self):
-        return self.nome
+        return f"{self.nome}"
 
 
 class Utilizador(models.Model):
     nome = models.CharField(max_length=64)
-    genero = models.CharField(max_length=16)
     idade = models.IntegerField(default=0)
-    plantas = models.ManyToManyField(Planta)
 
     def __str__(self):
-        return self.nome
+        return f"{self.nome} de {self.idade} anos"
 
+
+class PlantaCuidada(models.Model):
+    planta = models.ForeignKey(Planta, on_delete = models.CASCADE)
+    utilizador = models.ForeignKey(Utilizador, on_delete = models.CASCADE)
+
+    def __str__(self):
+        return f"{self.planta} do {self.utilizador}"
+    
+
+class Tratamento(models.Model):
+    planta_cuidada = models.ForeignKey(PlantaCuidada, on_delete = models.CASCADE)
+    instante = models.DateTimeField(auto_now=True)
+    quantidade_agua = models.FloatField(default = 0.0)
+    quantidade_fertilizante = models.FloatField(default = 0.0)
+
+    def __str__(self):
+        return f"{self.planta_cuidada} : {self.quantidade_agua} l e {self.quantidade_fertilizante} g na data: {self.instante}"
+
+
+class Monitorizacao(models.Model):
+    planta_cuidada = models.ForeignKey(PlantaCuidada, on_delete = models.CASCADE)
+    instante = models.DateTimeField(auto_now=True)
+    luz = models.FloatField(default = 0.0)
+    humidade = models.FloatField(default = 0.0)
+    temperatura = models.FloatField(default = 0.0)
+    condutividade = models.FloatField(default = 0.0)
+
+    def __str__(self):
+        return f""
+    
+class Notificacao(models.Model):
+    planta_associada = models.ForeignKey(Planta, on_delete = models.CASCADE)
+    descricao = models.TextField(default = "")
+    criticidade = models.IntegerField(default = 1)
+
+    def __str__(self):
+        return f"{self.planta_associada} tem criticidade {self.criticidade}"

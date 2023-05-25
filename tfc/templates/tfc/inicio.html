@@ -2,5 +2,19 @@
 
 {% block main %}
     <header>Início</header>
-    <div class="espacamento"></div>
+    <div class="paginas">
+        <a href="{% url 'tfc:notificacoes' %}">
+            <div>
+                <center><h1>Notificações</h1></center><br>
+                <p>Descricao da pagina</p>    
+                <br><br><br>  
+                <hr> 
+                <br>
+                <p>Ver Detalhes ></p>
+            </div>
+        </a>
+    </div>
+    <div class="espacamento2"></div>
+
+    <header>Meteorologia</header>
 {% endblock main %}

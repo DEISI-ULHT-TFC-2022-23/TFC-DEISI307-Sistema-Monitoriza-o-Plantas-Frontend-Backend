@@ -3,4 +3,21 @@
 {% block main %}
     <header>O Meu Jardim</header>
     <div class="espacamento"></div>
+    <div class="plantas">
+
+        {% for planta_cuidada in plantas_cuidadas %}
+            <div>
+                <a href="{% url 'tfc:planta_cuidada' planta_cuidada.id %}">
+                    <div>
+                        {% load static %}
+                        <img src="{{ planta_cuidada.planta.imagem.url }}" alt="planta">
+                    </div>
+                    <div><p>{{ planta_cuidada.planta.nome }}</p></div>
+                </a>
+            </div>          
+        {% endfor %}
+    </div>
+
+    
+
 {% endblock main %}

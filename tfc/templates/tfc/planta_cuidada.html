@@ -1,0 +1,33 @@
+{% extends 'tfc/layout.html' %}
+
+{% block main %}
+    <header>{{ planta_cuidada }}</header>
+    <div class="espacamento"></div>
+    <p style="font-weight: bold;">Descrição:</p>
+
+    <section>
+        <p>{{ planta_cuidada.planta.descricao }}</p>
+    </section>
+    <div class="espacamento"></div>
+
+    <p style="font-weight: bold;">Guião de cuidados:</p>
+    <section>
+        <p>{{ planta_cuidada.planta.descricao }}</p>
+    </section>
+    <div class="espacamento"></div>
+
+    <p style="font-weight: bold;">Tratamentos realizados:</p>
+    <section>
+        <ul>
+            {% for tratamento in tratamentos %}
+                <li>{{ tratamento }}</li>
+            {% endfor %}
+        </ul>   
+    </section>
+    <div class="espacamento"></div>
+
+    <a href="{% url 'tfc:adicionar_tratamento' planta_cuidada.id %}">
+        <input type="button" value="Adicionar Tratamento">
+    </a>
+
+{% endblock main %}

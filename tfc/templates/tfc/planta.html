@@ -1,0 +1,23 @@
+{% extends 'tfc/layout.html' %}
+
+{% block main %}
+    <header>{{ planta.nome }}</header>
+    <div class="espacamento"></div>
+    <p style="font-weight: bold;">Descrição:</p>
+
+    <section>
+        <p>{{ planta.descricao }}</p>
+    </section>
+    <div class="espacamento"></div>
+
+    <p style="font-weight: bold;">Guião de cuidados:</p>
+    <section>
+        <p>{{ planta.descricao }}</p>
+    </section>
+    <div class="espacamento"></div>
+
+    <a href="{% url 'tfc:adicionar' planta.id %}">
+        <input type="button" value="Adicionar ao jardim">
+    </a>
+
+{% endblock main %}
