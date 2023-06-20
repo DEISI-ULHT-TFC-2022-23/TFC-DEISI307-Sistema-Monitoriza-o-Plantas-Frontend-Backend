@@ -71,6 +71,7 @@ def planta_page_view(request, planta_id):
 def adicionar_planta_view(request, planta_id):
     planta = Planta.objects.get(pk = planta_id)
     user = Utilizador.objects.get(nome = "Pedro")
+
     planta_cuidade = PlantaCuidada.objects.create(
          planta = planta,
          utilizador = user
@@ -111,6 +112,12 @@ def adicionar_tratamento_page_view(request, planta_cuidada_id):
     }
 
     return render(request, 'tfc/tratamento.html', context)
+
+
+def apaga_planta_cuidada_view(request, planta_cuidada_id):
+    PlantaCuidada.objects.get(pk = planta_cuidada_id).delete()
+
+    return redirect('tfc:omeujardim')
 
 
 def notificacoes_page_view(request):

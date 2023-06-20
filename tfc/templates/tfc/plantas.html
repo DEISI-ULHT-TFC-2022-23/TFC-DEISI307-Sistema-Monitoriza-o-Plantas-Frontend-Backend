@@ -9,8 +9,10 @@
             <div>
                 <a href="{% url 'tfc:planta' planta.id %}">
                     <div>
-                        {% load static %}
-                        <img src="{{ planta.imagem.url }}" alt="planta">
+                        <center>
+                            {% load static %}
+                            <img src="{{ planta.imagem.url }}" alt="planta">
+                        </center>
                     </div>
                     <div><p>{{ planta.nome }}</p></div>
                 </a>

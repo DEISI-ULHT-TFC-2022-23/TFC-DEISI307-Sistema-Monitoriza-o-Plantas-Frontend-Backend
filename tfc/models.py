@@ -40,7 +40,7 @@ class Tratamento(models.Model):
     quantidade_fertilizante = models.FloatField(default = 0.0)
 
     def __str__(self):
-        return f"{self.planta_cuidada} : {self.quantidade_agua} l e {self.quantidade_fertilizante} g na data: {self.instante}"
+        return f"{self.planta_cuidada} : {self.quantidade_agua} litros de água e {self.quantidade_fertilizante} kg de fertilizante na data: {self.instante}"
 
 
 class Monitorizacao(models.Model):
@@ -53,6 +53,7 @@ class Monitorizacao(models.Model):
 
     def __str__(self):
         return f""
+
     
 class Notificacao(models.Model):
     planta_associada = models.ForeignKey(Planta, on_delete = models.CASCADE)

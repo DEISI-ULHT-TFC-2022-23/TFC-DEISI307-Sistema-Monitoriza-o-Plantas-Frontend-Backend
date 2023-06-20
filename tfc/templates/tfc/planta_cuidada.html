@@ -12,7 +12,12 @@
 
     <p style="font-weight: bold;">Guião de cuidados:</p>
     <section>
-        <p>{{ planta_cuidada.planta.descricao }}</p>
+        <ul>
+            <li>Exposição Solar: {{ planta_cuidada.planta.expo_solar }}ºC</li>
+            <li>Quantidade de água: {{ planta_cuidada.planta.quantidade_agua }} litros</li>
+            <li>Quantidade de fertilizantes: {{ planta_cuidada.planta.quantidade_fertilizante }} kg</li>
+            <li>Tipo de fertilizante: {{ planta_cuidada.planta.tipo_fertilizante }}</li>
+        </ul>
     </section>
     <div class="espacamento"></div>
 
@@ -24,10 +29,18 @@
             {% endfor %}
         </ul>   
     </section>
-    <div class="espacamento"></div>
-
-    <a href="{% url 'tfc:adicionar_tratamento' planta_cuidada.id %}">
-        <input type="button" value="Adicionar Tratamento">
-    </a>
-
+    <div class="espacamento2"></div>
+    <div class="espacamento2"></div>
+    <div class="espacamento2"></div>
+    
+    <center>
+        <a href="{% url 'tfc:adicionar_tratamento' planta_cuidada.id %}">
+            <input type="button" value="+ Adicionar Tratamento" class="buttonadd">
+        </a>
+    
+        <a href="{% url 'tfc:apagar' planta_cuidada.id %}">
+            <input type="button" value="Apagar do Jardim" class="buttondel">
+        </a>   
+    </center>
+    
 {% endblock main %}

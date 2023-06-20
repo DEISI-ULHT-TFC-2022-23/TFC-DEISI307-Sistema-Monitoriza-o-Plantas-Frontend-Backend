@@ -16,12 +16,15 @@ urlpatterns = [
     path('logout', views.logout_view, name = 'logout'),
     path('dashboard', views.dashboard_page_view, name = 'dashboard'),
     path('inicio', views.inicio_page_view, name = 'inicio'),
+
     path('plantas', views.plantas_page_view, name = 'plantas'),
     path('planta/<int:planta_id>', views.planta_page_view, name = 'planta'),
     path('adicionar_planta/<int:planta_id>', views.adicionar_planta_view, name = 'adicionar'),
-    path('adicionar_tratamento/<int:planta_cuidada_id>', views.adicionar_tratamento_page_view, name = 'adicionar_tratamento'),
-    path('planta_cuidada/<int:planta_cuidada_id>', views.planta_cuidada_page_view, name = 'planta_cuidada'),
+    
     path('omeujardim', views.jardim_page_view, name = 'omeujardim'),
+    path('adicionar_tratamento/<int:planta_cuidada_id>', views.adicionar_tratamento_page_view, name = 'adicionar_tratamento'),
+    path('apagar/<int:planta_cuidada_id>', views.apaga_planta_cuidada_view, name = 'apagar'),
+    path('planta_cuidada/<int:planta_cuidada_id>', views.planta_cuidada_page_view, name = 'planta_cuidada'),
     path('notificacoes', views.notificacoes_page_view, name = 'notificacoes'),
 ]   
 

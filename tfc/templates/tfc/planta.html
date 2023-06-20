@@ -12,12 +12,30 @@
 
     <p style="font-weight: bold;">Guião de cuidados:</p>
     <section>
-        <p>{{ planta.descricao }}</p>
+        <ul>
+            <li>Exposição Solar: {{ planta.expo_solar }}ºC</li>
+            <li>Quantidade de água: {{ planta.quantidade_agua }} litros</li>
+            <li>Quantidade de fertilizantes: {{ planta.quantidade_fertilizante }} kg</li>
+            <li>Tipo de fertilizante: {{ planta.tipo_fertilizante }}</li>
+        </ul>
+        
     </section>
     <div class="espacamento"></div>
 
+    <p style="font-weight: bold;">Imagem:</p>
+    <section>
+        {% load static %}
+        <img src="{{ planta.imagem.url }}" alt="planta">
+    </section>
+    <div class="espacamento2"></div>
+    <div class="espacamento2"></div>
+
+
     <a href="{% url 'tfc:adicionar' planta.id %}">
-        <input type="button" value="Adicionar ao jardim">
+        <input type="button" value="+ Adicionar ao jardim" class="buttonadd">
     </a>
+    <div class="espacamento2"></div>
+    <div class="espacamento2"></div>
+    <div class="espacamento2"></div>
 
 {% endblock main %}

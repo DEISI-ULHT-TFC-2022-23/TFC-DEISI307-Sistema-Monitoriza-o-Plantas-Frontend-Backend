@@ -9,31 +9,33 @@
     <meta name = "description" content = "TFC">
     {% load static %}
     <link rel = "shortcut icon" type = "image/x-icon" href = "{% static 'tfc/images/planta.ico' %}">
-    {% load static %}
-    <link rel = "stylesheet" href = "{% static 'tfc/css/login.css' %}">
     <title>Login</title>
 
     <style>
-      .login{
-        display: flex;
-        position: relative;
-
+      html{
+        background-color: #33fa9a;
       }
 
-      .button{
-
+      .container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: aliceblue;
+        margin-left: 60px;
       }
 
       .espacamento{
         padding: 2px;
       }
+
+
     </style>
 
 </head>
 <body>
-    <h1>Login</h1>
+    <h1>Login</h1><br><br>
     
-    <div>
+    <div class="container">
       <form action = "" method="POST">
         {% csrf_token %}
         <h3>Username</h3>
