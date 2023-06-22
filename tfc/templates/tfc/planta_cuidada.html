@@ -13,7 +13,7 @@
     <p style="font-weight: bold;">Guião de cuidados:</p>
     <section>
         <ul>
-            <li>Exposição Solar: {{ planta_cuidada.planta.expo_solar }}ºC</li>
+            <li>Dificuldade: {{ planta_cuidada.planta.dificuldade }}</li>
             <li>Quantidade de água: {{ planta_cuidada.planta.quantidade_agua }} litros</li>
             <li>Quantidade de fertilizantes: {{ planta_cuidada.planta.quantidade_fertilizante }} kg</li>
             <li>Tipo de fertilizante: {{ planta_cuidada.planta.tipo_fertilizante }}</li>
@@ -33,14 +33,23 @@
     <div class="espacamento2"></div>
     <div class="espacamento2"></div>
     
-    <center>
-        <a href="{% url 'tfc:adicionar_tratamento' planta_cuidada.id %}">
-            <input type="button" value="+ Adicionar Tratamento" class="buttonadd">
-        </a>
+    <pre>
+                                                                                                <a href="{% url 'tfc:adicionar_tratamento' planta_cuidada.id %}">
+                                                                                                    <input type="button" value="+ Adicionar Tratamento" class="buttonadd">
+                                                                                                </a>
+    </pre>
     
-        <a href="{% url 'tfc:apagar' planta_cuidada.id %}">
-            <input type="button" value="Apagar do Jardim" class="buttondel">
-        </a>   
-    </center>
+
+    <p style="font-weight: bold;">Monitorização da planta:</p>
+    <section>
+           
+    </section>
+
+    <pre>
+                                                                                                    <a href="{% url 'tfc:apagar' planta_cuidada.id %}">
+                                                                                                        <input type="button" value="Apagar do Jardim" class="buttondel">
+                                                                                                    </a>   
+    </pre>
+    
     
 {% endblock main %}

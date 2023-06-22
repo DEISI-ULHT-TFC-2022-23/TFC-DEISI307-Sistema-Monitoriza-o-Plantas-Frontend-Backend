@@ -21,20 +21,41 @@
         align-items: center;
         justify-content: center;
         background-color: aliceblue;
-        margin-left: 60px;
+        margin-left: 300px;
+        margin-right: 300px;
+        height: 50vh;
       }
 
       .espacamento{
-        padding: 2px;
+        padding: 10px;
       }
 
-
+      .buttonlogin{
+        display: flex;
+        justify-content: flex-end;
+        border: none;
+        color: white;
+        font-weight: bold;
+        background-color: rgb(98, 160, 98);
+        border-radius: 20px;
+        padding: 15px 32px;
+        text-align: end;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 13px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+      
     </style>
 
 </head>
 <body>
-    <h1>Login</h1><br><br>
+    <center>
+      <br><br><h1>Login🌱</h1><br>
     
+    </center>
+
     <div class="container">
       <form action = "" method="POST">
         {% csrf_token %}
@@ -48,7 +69,9 @@
           <p> {{ message }} </p>
         {% endif %}
 
-        <input type="submit" value="Login" class="button">
+        <center>
+          <input type="submit" value="Login" class="buttonlogin">
+        </center>
       </form>  
     </div> 
 

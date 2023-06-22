@@ -13,7 +13,7 @@
     <p style="font-weight: bold;">Guião de cuidados:</p>
     <section>
         <ul>
-            <li>Exposição Solar: {{ planta.expo_solar }}ºC</li>
+            <li>Dificuldade: {{ planta.dificuldade }}</li>
             <li>Quantidade de água: {{ planta.quantidade_agua }} litros</li>
             <li>Quantidade de fertilizantes: {{ planta.quantidade_fertilizante }} kg</li>
             <li>Tipo de fertilizante: {{ planta.tipo_fertilizante }}</li>
@@ -30,10 +30,12 @@
     <div class="espacamento2"></div>
     <div class="espacamento2"></div>
 
-
-    <a href="{% url 'tfc:adicionar' planta.id %}">
-        <input type="button" value="+ Adicionar ao jardim" class="buttonadd">
-    </a>
+    <pre>
+                                                                                                    <a href="{% url 'tfc:adicionar' planta.id %}">
+                                                                                                        <input type="button" value="+ Adicionar ao jardim" class="buttonadd">
+                                                                                                    </a>
+    </pre>
+   
     <div class="espacamento2"></div>
     <div class="espacamento2"></div>
     <div class="espacamento2"></div>

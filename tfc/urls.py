@@ -10,12 +10,19 @@ from django.conf.urls.static import static
 app_name = "tfc"
 
 urlpatterns = [
+    path('seu_endpoint/', views.seu_endpoint, name='seu_endpoint'),
+    
     path('', views.splashscreen_view, name = 'splashscreen'),
     path('splashscreen', views.splashscreen_view, name = 'splashscreen'),
     path('login', views.login_view, name = 'login'),
     path('logout', views.logout_view, name = 'logout'),
     path('dashboard', views.dashboard_page_view, name = 'dashboard'),
+    path('agua', views.agua_page_view, name = 'agua'),
+    path('fertilizante', views.fertilizante_page_view, name = 'fertilizante'),
+
     path('inicio', views.inicio_page_view, name = 'inicio'),
+    path('curiosidade', views.curiosidade_page_view, name = 'curiosidade'),
+    path('curiosidade2', views.curiosidade2_page_view, name = 'curiosidade2'),
 
     path('plantas', views.plantas_page_view, name = 'plantas'),
     path('planta/<int:planta_id>', views.planta_page_view, name = 'planta'),

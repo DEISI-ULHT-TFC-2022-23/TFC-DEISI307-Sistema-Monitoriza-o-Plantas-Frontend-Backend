@@ -35,7 +35,7 @@ body {
 .sidenav a {
     padding: 30px 40px 8px 20px;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 20px;/*Tamanho da letra do menú*/
     color: #818181;
     display: block;
 }
@@ -156,7 +156,7 @@ section {
 .notificacoesnaolidas{
     height: 10vh;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     border-radius: 10px;
     align-items: flex-start;
     background-color: #ffffff;
@@ -166,7 +166,7 @@ section {
 .notificacoeslidas{
     height: 10vh;
     display: flex;
-    justify-content:center;
+    justify-content:flex-start;
     border-radius: 10px;
     align-items:flex-start;
     background-color: #a9a9a9;
@@ -195,6 +195,40 @@ section {
     color: white;
     font-weight: bold;
     background-color: rgb(228, 33, 33);
+    border-radius: 20px;
+    padding: 15px 32px;
+    text-align: end;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.buttonagua{
+    display: flex;
+    justify-content: flex-end;
+    border: none;
+    color: white;
+    font-weight: bold;
+    background-color: rgb(33, 140, 228);
+    border-radius: 20px;
+    padding: 15px 32px;
+    text-align: end;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.buttonfertilizante{
+    display: flex;
+    justify-content: flex-end;
+    border: none;
+    color: white;
+    font-weight: bold;
+    background-color: rgb(75, 56, 22);
     border-radius: 20px;
     padding: 15px 32px;
     text-align: end;

@@ -4,10 +4,35 @@
     <header>Tratamento {{ planta_cuidada }}</header>
     <div class="espacamento"></div>
 
-    <form action="" method="POST">
+    <form action="{% url 'tfc:adicionar_tratamento' planta_cuidada.id %}" method="POST">
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit">
+        <div class="espacamento2"></div>
+        <div class="espacamento2"></div>
+        <div class="espacamento2"></div>
+        <div class="espacamento2"></div>
+        <div class="espacamento2"></div>
+        <div class="espacamento2"></div>
+        <div class="espacamento2"></div>
+        <div class="espacamento2"></div>
+
+        <input type="submit" value="Adicionar Tratamento" class="buttonadd">
+
+        <div class="espacamento2"></div>
+        <div class="espacamento2"></div>
+        <div class="espacamento2"></div>
+        <div class="espacamento2"></div>
+        <div class="espacamento2"></div>
+        <div class="espacamento2"></div>
+        <div class="espacamento2"></div>
+        <div class="espacamento2"></div>
+
+        <a href="{% url 'tfc:omeujardim' %}" class="espacamento">Voltar</a>
+
+        <div class="espacamento2"></div>
+        <div class="espacamento2"></div>
+        <div class="espacamento2"></div>
+        <div class="espacamento2"></div>
     </form>
 
 {% endblock main %}

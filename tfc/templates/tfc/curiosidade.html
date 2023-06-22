@@ -1,0 +1,45 @@
+{% extends 'tfc/layout.html' %}
+
+{% block main %}
+    <header>Espécie, Variedade e Mais</header><br><br>
+    <h4>Espécie</h4><br>
+    <p>A unidade científica básica da classificação das plantas é a espécie. Cada espécie se enquadra em um gênero, e cada gênero em uma família abrangente.</p><br><br><br>
+    
+    <h4>As regras para nomear espécies</h4><br>
+    <p>O nome científico de uma espécie é escrito com o nome do <i>Gênero (em letra maiúscula e itálico) + epíteto específico (em itálico)</i><br><br>
+    Por exemplo, o nome científico da orquídea Cattleya é <i>Cattleya labiata</i> <br><br>
+    <i>Cattleya</i> é o nome científico do gênero e <i>labiata</i> é o epíteto específico (espécie).</p><br><br><br>
+
+    <h4>Cultivares hortícolas</h4><br>
+    <p>A maioria das plantas compradas em comércios são cultivares hortícolas. Ou seja, são espécies novas criadas intencionalmente por fitomelhoristas por meio de uma cuidadosa cultura seletiva. Elas são chamadas de variedades. <br><br>
+    O nome científico de uma variedade é escrito com o nome do <i>Gênero (em letra maiúscula e itálico) + epíteto específico (em itálico)</i> + 'Nome do Cultivar' (letra normal e maiúscula, entre aspas simples)<br><br>
+    Exemplo: <i>Vitis vinifera</i> 'Kyoho'<br><br>
+    Algumas variedades com origens híbridas complexas podem omitir o epíteto específico e ser escritas com o nome do <i>Gênero</i> + 'Nome do Cultivar' (por exemplo, Rosa 'Graham Thomas').</p><br><br>
+
+    <h4>Híbridos</h4><br>
+    <p>A maioria dos híbridos vem do cruzamento de diferentes espécies do mesmo gênero. Seus nomes científicos podem ser escritos de duas maneiras. Exemplificaremos com o morango.<br><br>
+    Opção nº 1: <i>nome do gênero do progenitor feminino + epíteto específico × epíteto específico do progenitor masculino – p. ex. Fragaria virginiana × chiloensis</i><br><br>
+    Opção nº 2: (se um novo epíteto específico for dado ao híbrido) <i>nome do gênero (em itálico) × novo epíteto específico (em itálico)</i>  – p. ex. <i>Fragaria × ananassa</i><br><br>
+    Se um híbrido for gerado a partir de dois gêneros diferentes, um novo nome de gênero será criado. Então, o "×" será colocado antes do novo nome do gênero. Por exemplo, o híbrido de <i>Rhodohypoxis baurii</i> e <i>Hypoxis parvula</i> é escrito ×<i>Rhodoxis hybrida</i>.</p><br><br><br>
+
+    <h4>Classificação sob a mesma espécie</h4><br>
+    <p>Os indivíduos dentro de uma mesma espécie ainda podem diferir consideravelmente. Portanto, existem três categorias taxonômicas sob a espécie.</p><br><br><br>
+
+    <h4>Variedade (abreviada como var.)</h4><br>
+    <p>Um grupo taxonômico morfologicamente distinto da mesma espécie compartilhando a mesma área de distribuição é chamado de variedade. As características distintivas são geralmente causadas por diferenças ambientais e geográficas e podem ser herdadas de forma estável.<br><br>
+    O nome científico da variedade é escrito com o nome do <i>Gênero (em letra maiúscula e itálico) + epíteto específico (em itálico) + var. (letra normal) + nome da variedade (em itálico)</i><br><br>
+    Exemplo: <i>Loropetalum chinense</i> var. <i>rubrum</i></p><br><br><br>
+
+    <h4>Subespécie (abreviada como subsp.)</h4><br>
+    <p>(A classificação de subespécies agora é desaconselhada no caso das plantas e usada mais para animais) <br><br>
+    Uma subespécie é um grupo de indivíduos da mesma espécie que são um pouco diferentes uns dos outros devido a longos períodos de isolamento geográfico ou ecológico.<br><br>
+    O nome científico de uma subespécie é escrito com o nome do <i>Gênero (em letra maiúscula e itálico) + epíteto específico (em itálico) + subsp. (letra normal) + nome da subespécie (em itálico)</i><br><br> 
+    Exemplo: <i>Syringa reticulata</i> subsp. <i>amurensis</i></p><br><br><br>
+
+    <h4>Forma (abreviada como f.)</h4><br>
+    <p>As formas vêm de pequenas diferenças dentro da espécie original devido a fatores ambientais. As formas geralmente são instáveis em termos de herança genética.<br><br>
+    O nome científico de uma forma é escrito com o nome do <i>Gênero (letra maiúscula e itálico) + epíteto específico (em itálico) + f. (letra normal) + nome da forma (em itálico)</i><br><br>
+    Exemplo: <i> Lamprocapnos spectabilis</i> f. <i>alba</i></p><br><br>
+
+    <a href="{% url 'tfc:inicio' %}">Voltar</a>
+{% endblock main %}

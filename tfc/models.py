@@ -8,7 +8,6 @@ class Planta(models.Model):
     descricao = models.TextField(default = "")
     imagem = models.ImageField(default = "")
     dificuldade = models.CharField(max_length = 16, default = "")
-    expo_solar = models.CharField(max_length = 32)
     quantidade_agua = models.FloatField(default = 0.0)
     quantidade_fertilizante = models.FloatField(default = 0.0)
     tipo_fertilizante = models.CharField(max_length = 64, default = "")
@@ -19,10 +18,9 @@ class Planta(models.Model):
 
 class Utilizador(models.Model):
     nome = models.CharField(max_length=64)
-    idade = models.IntegerField(default=0)
 
     def __str__(self):
-        return f"{self.nome} de {self.idade} anos"
+        return f"{self.nome}"
 
 
 class PlantaCuidada(models.Model):
@@ -52,7 +50,7 @@ class Monitorizacao(models.Model):
     condutividade = models.FloatField(default = 0.0)
 
     def __str__(self):
-        return f""
+        return f"{self.planta_cuidada} em {self.instante} tem {self.luz} de luz, {self.humidade} de humidade, {self.temperatura} de temperatura e {self.condutividade} de condutividade"
 
     
 class Notificacao(models.Model):
@@ -61,4 +59,4 @@ class Notificacao(models.Model):
     criticidade = models.IntegerField(default = 1)
 
     def __str__(self):
-        return f"{self.planta_associada} tem criticidade {self.criticidade}"
+        return f"{self.planta_associada} tem nível critico {self.criticidade}"

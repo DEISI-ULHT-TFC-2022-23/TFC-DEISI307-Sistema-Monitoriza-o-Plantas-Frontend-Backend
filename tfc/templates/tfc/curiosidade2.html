@@ -1,0 +1,50 @@
+{% extends 'tfc/layout.html' %}
+
+{% block main %}
+    <header>Porque a mesma planta pode ter uma aparência diferente?</header>
+    <div class="espacamento"></div>
+    <h4>Diferenças entre cultivos</h4><br>
+    <p>Os frutos, flores e folhas de uma única espécie de planta podem variar em tamanho, cor e formato, quer sejam influenciados pela seleção artificial, quer pelo ambiente natural. A variação intencional de uma única espécie produz o que é chamado de cultivo.<br><br>
+    O cróton (<i>Codiaeum variegatum</i>) é uma popular planta doméstica. As suas folhas podem ser filiformes, lanceoladas, ovais, espatuladas, sagitadas ou redondas. A coloração delas pode incluir o vermelho, amarelo, verde ou roxo em uma variedade de padrões, como pontilhado, listrado ou manchado (foto abaixo).</p><br>
+
+    <center>
+        {% load static %}
+        <img src="{% static 'tfc/images/croton.jpg' %}" alt="croton">
+    </center>
+    <br>
+        
+    <p>As rosas são um exemplo perfeito da grande variação que pode ocorrer entre os cultivares. A flor de uma rosa pode ter uma ou diversas camadas e ser da cor vermelha, roxa, laranja ou rosa. Os botões também podem crescer individualmente ou em cachos.</p><br>
+    <center>
+        {% load static %}
+        <img src="{% static 'tfc/images/rosas.jpg' %}" alt="rosas">
+    </center>
+    <br>
+    
+    <p>A abóbora (Cucurbita maxima), muito comum na América, é reconhecida como uma das espécies mais diversificadas dentre as plantas domesticadas. Ela possui inúmeras cultivares que produzem frutos completamente diferentes em tamanho, formato e cor.</p><br>
+
+    <center>
+        {% load static %}
+        <img src="{% static 'tfc/images/abobora.jpg' %}" alt="abobora">
+    </center>
+    <br><br>
+    
+    <h4>Diferenças na aparência causadas pelo estágio de crescimento e adaptação</h4><br>
+    <p>O formato e o tamanho das folhas de uma mesma planta podem ser tão diferentes que muitas vezes são confundidas com as folhas de duas espécies diferentes. Isso pode ocorrer devido às diferenças entre as folhas jovens e maduras ou entre as folhas inferiores e superiores, bem como entre as folhas deficientes em nutrientes e as adequadamente fertilizadas. Por exemplo, as folhas jovens e inferiores da amoreira de papel (Broussonetia papyrifera) sempre têm de 3 a 5 lóbulos. Isso transmite uma mensagem clara às borboletas e demais insetos: "Estou sendo comida, não ponham ovos em mim!" As folhas maduras, ou superiores, não são lobadas porque desenvolvem uma camada protetora resistente e não precisam dessa camuflagem.</p><br>
+
+    <center>
+        {% load static %}
+        <img src="{% static 'tfc/images/folha.jpg' %}" alt="folhas">
+    </center>
+    <br><br>
+    
+    <p>A forma de crescimento de uma planta também pode mudar, dependendo do ambiente. O singônio (<i>Syngonium podophyllum</i>) pode ser usado como cobertura vegetal de baixa manutenção. No entanto, quando a planta alcança uma árvore ou muro, torna-se uma trepadeira.</p><br>
+
+    <center>
+        {% load static %}
+        <img src="{% static 'tfc/images/singonio.jpg' %}" alt="singonio">
+    </center>
+    <br><br>
+
+    <a href="{% url 'tfc:inicio' %}">Voltar</a>
+
+{% endblock main %}

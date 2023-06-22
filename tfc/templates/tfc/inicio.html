@@ -3,14 +3,21 @@
 {% block main %}
     <header>Início</header>
     <div class="paginas">
-        <a href="{% url 'tfc:notificacoes' %}">
+        <a href="{% url 'tfc:curiosidade' %}">
             <div>
-                <center><h1>Como Funciona a Aplicação?</h1></center><br>
-                <p>Descricao da pagina</p>    
-                <br><br>
+                <center><h1>Espécies e variedades, quais são as diferenças?</h1></center><br>
                 <hr> 
                 <br>
-                <p>Ver Detalhes ></p>
+                <p>Ver Mais ></p>
+            </div>
+        </a>
+
+        <a href="{% url 'tfc:curiosidade2' %}">
+            <div>
+                <center><h1>Porque uma planta pode ter aparência diferente?</h1></center><br>
+                <hr> 
+                <br>
+                <p>Ver Mais ></p>
             </div>
         </a>
     </div>

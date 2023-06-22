@@ -6,6 +6,40 @@ from django.shortcuts import redirect
 from .models import *
 import matplotlib.pyplot as plt
 
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+import json
+
+@csrf_exempt
+def seu_endpoint(request):
+    if request.method == 'POST':
+        try:
+            # Recebe o JSON da solicitação POST
+            json_data = json.loads(request.body)
+            
+            # Faça o processamento necessário com os dados do JSON
+            # Aqui está um exemplo de como você pode acessar os valores:
+            chave1 = json_data['chave1']
+            chave2 = json_data['chave2']
+            chave3 = json_data['chave3']
+            chave4 = json_data['chave4']
+            chave5 = json_data['chave5']
+            
+            # Realize as operações desejadas com os dados recebidos
+            
+            # Retorna uma resposta JSON de sucesso
+            response_data = {'success': True}
+            return JsonResponse(response_data)
+        
+        except json.JSONDecodeError:
+            # Retorna uma resposta JSON com erro se o JSON for inválido
+            response_data = {'success': False, 'error': 'JSON inválido'}
+            return JsonResponse(response_data, status=400)
+    else:
+        # Retorna uma resposta JSON com erro se o método da solicitação não for POST
+        response_data = {'success': False, 'error': 'Método não permitido'}
+        return JsonResponse(response_data, status=405)
+
 
 def login_view(request):
     if request.method == 'POST':
@@ -40,17 +74,41 @@ def splashscreen_view(request):
 
 
 def dashboard_page_view(request):
+    return render(request, 'tfc/dashboard.html')
+
+
+def agua_page_view(request):
+    meses = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31']
+    valores = [105235, 107697, 110256, 109236, 108859, 109986, 109236, 109236,105235, 107697, 110256, 109236, 108859, 109986, 109236, 109236,105235, 107697, 110256, 109236, 108859, 109986, 109236, 109236,105235, 107697, 110256, 109236, 108859, 109986, 109236]
+    plt.plot(meses,valores)
+
+    plt.title('Quantidade de Água da planta X durante o mês de maio')
+    plt.xlabel('Dias')
+    plt.ylabel('Quantidade de Água')
+    plt.show()
+
+    return render(request, 'tfc/agua.html')
+
+
+def fertilizante_page_view(request):
     #meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho']
     #valores = [105235, 107697, 110256, 109236, 108859, 109986]
     #plt.plot(meses,valores)
     #plt.show()
 
-    return render(request, 'tfc/dashboard.html')
+    return render(request, 'tfc/fertilizante.html')
+
+def curiosidade_page_view(request):
+    return render(request, 'tfc/curiosidade.html')
+
+
+def curiosidade2_page_view(request):
+    return render(request, 'tfc/curiosidade2.html')
 
 
 def inicio_page_view(request):
-
     context = {}
+
     return render(request, 'tfc/inicio.html')
 
 
@@ -104,7 +162,14 @@ def jardim_page_view(request):
 
 def adicionar_tratamento_page_view(request, planta_cuidada_id):
     planta_cuidada = PlantaCuidada.objects.get(pk = planta_cuidada_id)
-    form = TratamentoForm()
+    form = TratamentoForm(request.POST or None)
+
+    if request.method == 'POST':
+        Tratamento.objects.create(
+            planta_cuidada = planta_cuidada,
+            quantidade_agua = request.POST ['quantidade_agua'],
+            quantidade_fertilizante = request.POST ['quantidade_fertilizante'],
+        )
 
     context = {
         'planta_cuidada' : planta_cuidada, 
