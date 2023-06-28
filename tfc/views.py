@@ -78,23 +78,46 @@ def dashboard_page_view(request):
 
 
 def agua_page_view(request):
-    meses = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31']
-    valores = [105235, 107697, 110256, 109236, 108859, 109986, 109236, 109236,105235, 107697, 110256, 109236, 108859, 109986, 109236, 109236,105235, 107697, 110256, 109236, 108859, 109986, 109236, 109236,105235, 107697, 110256, 109236, 108859, 109986, 109236]
-    plt.plot(meses,valores)
+    dias = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31']
+    agua = [0.1, 4.2, 3.3, 1.9, 0.8, 4.1, 3.1, 1.0, 4.2, 3.4, 2.0, 0.6, 4.1, 3.0, 1.6, 0.3, 4.2, 3.5, 2.1, 0.7, 4.2, 3.7, 2.5, 1.2, 0.2, 4.0, 3.4, 2.8, 1.9, 1.0, 4.2]
+    plt.plot(dias,agua)
 
-    plt.title('Quantidade de Água da planta X durante o mês de maio')
+    plt.title('Quantidade de Água da planta "Roseira" durante o mês de maio')
     plt.xlabel('Dias')
-    plt.ylabel('Quantidade de Água')
+    plt.ylabel('Quantidade de Água (litros)')
+    plt.show()
+
+    dias2 = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31']
+    agua2 = [20.2, 20.2, 10.3, 20.2, 10.3, 20.1, 10.3, 20.0, 10.3, 20.2, 10.3, 20.2, 10.3, 20.2, 10.3, 20.2, 10.3, 20.1, 10.1, 20.0, 10.2, 20.2, 10.5, 19.9, 9.9, 20.1, 10.3, 20.2, 10.3, 20.2, 10.3]
+    plt.plot(dias2,agua2)
+
+    plt.title('Quantidade de Água da planta "Abacateiro" durante o mês de maio')
+    plt.xlabel('Dias')
+    plt.ylabel('Quantidade de Água (litros)')
     plt.show()
 
     return render(request, 'tfc/agua.html')
 
 
 def fertilizante_page_view(request):
-    #meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho']
-    #valores = [105235, 107697, 110256, 109236, 108859, 109986]
-    #plt.plot(meses,valores)
-    #plt.show()
+    dias = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31']
+    fertilizante = [0.2, 1.9, 1.8, 1.7, 1.6, 1.5, 1.4, 1.3, 1.2, 1.1, 1.0, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 1.9, 1.8, 1.7, 1.6, 1.5, 1.4, 1.3, 1.2, 1.1, 1.0, 0.9, 0.8, 0.7, 0.6]
+    plt.plot(dias,fertilizante)
+
+    plt.title('Quantidade de Fertilizantes na planta "Roseira" durante o mês de maio')
+    plt.xlabel('Dias')
+    plt.ylabel('Quantidade de Fertilizantes (Quilos)')
+    plt.show()
+
+
+    dias2 = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31']
+    fertilizante2 = [0.4, 1.4, 1.4, 1.4, 1.3, 1.3, 1.3, 1.2, 1.2, 1.2, 1.2, 1.2, 1.1, 1.1, 1.0, 1.0, 0.9, 0.9, 0.8, 0.8, 0.7, 0.6, 0.5, 1.4, 1.4, 1.4, 1.3, 1.2, 1.1, 1.0, 1.0]
+    plt.plot(dias2,fertilizante2)
+
+    plt.title('Quantidade de Fertilizantes na planta "Abacateiro" durante o mês de maio')
+    plt.xlabel('Dias')
+    plt.ylabel('Quantidade de Fertilizantes (Quilos)')
+    plt.show()
 
     return render(request, 'tfc/fertilizante.html')
 
@@ -107,9 +130,10 @@ def curiosidade2_page_view(request):
 
 
 def inicio_page_view(request):
-    context = {}
-
     return render(request, 'tfc/inicio.html')
+
+def meteorologia_page_view(request):
+    return render(request,'tfc/meteorologia.html')
 
 
 def plantas_page_view(request):

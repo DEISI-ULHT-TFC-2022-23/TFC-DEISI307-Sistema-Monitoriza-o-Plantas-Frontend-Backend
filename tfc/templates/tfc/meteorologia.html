@@ -1,0 +1,121 @@
+{% extends 'tfc/layout.html' %}
+
+{% block main %}
+    <header>Meteorologia</header>
+    <div class="espacamento"></div>
+
+    <p style="font-size: 19px;">Próximos 5 dias:</p>
+    <div class="espacamento"></div>
+
+    <div class="card">
+        <h4 class="h4">04 JUL. TERÇA-FEIRA</h4>
+        <h6>NUBLADO</h6>
+        {% load static %}
+        <img src="{% static 'tfc/images/nublado.jpg' %}" alt="">
+        <center>
+            <h4 class="h4">Humidade: 60%</h4>
+        </center>
+        
+        <div class="container">
+            <div class="details">
+                <p>Máx</p><br>
+                <span>27<sup>&deg;</sup></span>
+            </div>
+            <div class="details">
+                <p>Min</p><br>
+                <span>18<sup>&deg;</sup></span>
+            </div>
+        </div>
+    </div>
+    <div class="espacamento"></div>
+
+    <div class="card">
+        <h4 class="h4">05 JUL. QUARTA-FEIRA</h4>
+        <h6>NUBLADO</h6>
+        {% load static %}
+        <img src="{% static 'tfc/images/nublado.jpg' %}" alt="">
+        <center>
+            <h4 class="h4">Humidade: 80%</h4>
+        </center>
+        
+        <div class="container">
+            <div class="details">
+                <p>Máx</p><br>
+                <span>25<sup>&deg;</sup></span>
+            </div>
+            <div class="details">
+                <p>Min</p><br>
+                <span>16<sup>&deg;</sup></span>
+            </div>
+        </div>
+    </div>
+    <div class="espacamento"></div>
+
+    <div class="card">
+        <h4 class="h4">06 JUL. QUINTA-FEIRA</h4>
+        <h6>ENSOLARADO</h6>
+        {% load static %}
+        <img src="{% static 'tfc/images/sol.jpg' %}" alt="">
+        <center>
+            <h4 class="h4">Humidade: 20%</h4>
+        </center>
+        
+        <div class="container">
+            <div class="details">
+                <p>Máx</p><br>
+                <span>30<sup>&deg;</sup></span>
+            </div>
+            <div class="details">
+                <p>Min</p><br>
+                <span>19<sup>&deg;</sup></span>
+            </div>
+        </div>
+    </div>
+    <div class="espacamento"></div>
+
+    <div class="card">
+        <h4 class="h4">07 JUL. SEXTA-FEIRA</h4>
+        <h6>NUBLADO</h6>
+        {% load static %}
+        <img src="{% static 'tfc/images/nublado.jpg' %}" alt="">
+        <center>
+            <h4 class="h4">Humidade: 50%</h4>
+        </center>
+        
+        <div class="container">
+            <div class="details">
+                <p>Máx</p><br>
+                <span>27<sup>&deg;</sup></span>
+            </div>
+            <div class="details">
+                <p>Min</p><br>
+                <span>20<sup>&deg;</sup></span>
+            </div>
+        </div>
+    </div>
+    <div class="espacamento"></div>
+
+    <div class="card">
+        <h4 class="h4">08 JUL. SÁBADO</h4>
+        <h6>ENSOLARADO</h6>
+        {% load static %}
+        <img src="{% static 'tfc/images/sol.jpg' %}" alt="">
+        <center>
+            <h4 class="h4">Humidade: 15%</h4>
+        </center>
+        
+        <div class="container">
+            <div class="details">
+                <p>Máx</p><br>
+                <span>31<sup>&deg;</sup></span>
+            </div>
+            <div class="details">
+                <p>Min</p><br>
+                <span>22<sup>&deg;</sup></span>
+            </div>
+        </div>
+    </div>
+    <div class="espacamento"></div>
+
+    <a href="{% url 'tfc:inicio' %}">Voltar</a>
+{% endblock main %}

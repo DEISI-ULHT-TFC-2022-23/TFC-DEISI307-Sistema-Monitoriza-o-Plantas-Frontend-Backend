@@ -21,6 +21,7 @@ urlpatterns = [
     path('fertilizante', views.fertilizante_page_view, name = 'fertilizante'),
 
     path('inicio', views.inicio_page_view, name = 'inicio'),
+    path('meteorologia', views.meteorologia_page_view, name='meteorologia'),
     path('curiosidade', views.curiosidade_page_view, name = 'curiosidade'),
     path('curiosidade2', views.curiosidade2_page_view, name = 'curiosidade2'),
 
