@@ -1,4 +1,4 @@
-# Sistema de Monitorização de Plantas - Frontend e Backend
+# Sistema de Monitorização de Plantas - Frontend e Backend🌱
 
 Este trabalho está a ser desenvolvido juntamente com outro TFC (Sistema de Monitorização de Plantas). Este TFC corresponde a toda a componente de frontend tendo sido utilizadas tecnologias web para o efeito como HTML5 e CSS3. Os dados recebidos das plantas são armazenados na base de dados da aplicação que provêem do outro TFC, fazendo, assim, a utilização de tecnologias backend como Python e a framework Django.
 <br>
@@ -25,3 +25,9 @@ Este trabalho está a ser desenvolvido juntamente com outro TFC (Sistema de Moni
 2. Fazer login com as credenciais username:"pedro" e password:"pedro"
 
 ## Video📹
+
+(https://www.youtube.com/watch?v=Bq55J70kZuk)
+
+## Imagem📸
+
+![plantas-de-interior-para-dar-vida-sua-casa](https://github.com/PedroRocha-a22003766/TFC/assets/79163624/8fd3ef9b-b8de-4acf-b861-85a62265eeb2)
